@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Portfolio - Your Name</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #020617;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.5);
+            --border-color: #334155;
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #a855f7;
+            --accent-green: #10b981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary), var(--bg-primary));
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            top: 25%;
+            left: 25%;
+            width: 400px;
+            height: 400px;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .blob-2 {
+            bottom: 25%;
+            right: 25%;
+            width: 400px;
+            height: 400px;
+            background: rgba(168, 85, 247, 0.1);
+            animation-delay: 1s;
+        }
+
+        .blob-3 {
+            top: 75%;
+            left: 75%;
+            width: 400px;
+            height: 400px;
+            background: rgba(6, 182, 212, 0.1);
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-cyan);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1rem 4rem;
+        }
+
+        .hero-avatar {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            padding: 4px;
+        }
+
+        .hero-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(30, 41, 59, 0.8);
+            color: white;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(51, 65, 85, 0.8);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+            color: var(--accent-cyan);
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 1rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* Skills */
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(51, 65, 85, 0.8);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        /* Projects */
+        .project-card {
+            height: 100%;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .card:hover .project-title {
+            color: var(--accent-cyan);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-problem {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 0.75rem;
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(51, 65, 85, 0.8);
+            color: var(--accent-cyan);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-result {
+            background: linear-gradient(to right, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .project-links a {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .tag {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            transition: border-color 0.3s;
+        }
+
+        .tag:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        /* Experience */
+        .exp-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-icon {
+            background: linear-gradient(to bottom right, var(--accent-blue), var(--accent-cyan));
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .exp-role {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-company {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .exp-responsibilities {
+            margin-left: 4rem;
+        }
+
+        .exp-responsibilities h4 {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .exp-responsibilities ul {
+            list-style: none;
+        }
+
+        .exp-responsibilities li {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .exp-responsibilities li::before {
+            content: '▹';
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(51, 65, 85, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            color: white;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                padding: 1rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .exp-responsibilities {
+                margin-left: 0;
+            }
+        }
+
+        /* Icons using Unicode/Emoji */
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">AI_Portfolio</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-avatar">
+                <div class="hero-avatar-inner">🤖</div>
+            </div>
+            <h1>Your Name Here</h1>
+            <p class="hero-subtitle">AI & ML Enthusiast | Building Intelligent Systems with Data and Code</p>
+            <p class="hero-description">Passionate about creating innovative AI solutions that solve real-world problems</p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">📄 Resume / CV</a>
+                <a href="https://github.com" target="_blank" class="btn btn-secondary">💻 GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">💼 LinkedIn</a>
+                <a href="#contact" class="btn btn-secondary">✉️ Contact</a>
+            </div>
+            
+            <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                ⌄
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="project-icon">🧠</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Who I Am</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                        I'm a passionate B.Tech student specializing in Artificial Intelligence and Machine Learning, 
+                        driven by the vision of creating intelligent systems that transform how we interact with technology. 
+                        My journey in AI/ML is fueled by curiosity and the desire to solve complex real-world problems through data-driven solutions.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        With hands-on experience in building machine learning models, computer vision applications, and NLP systems, 
+                        I combine theoretical knowledge with practical implementation skills. I believe in continuous learning, 
+                        collaborative innovation, and leveraging cutting-edge technologies to build impactful solutions.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="project-icon">💻</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">What I Do</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Machine Learning Engineering</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">Building predictive models and classification systems using scikit-learn, XGBoost, and ensemble methods</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Deep Learning & Computer Vision</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">Developing CNN architectures with TensorFlow and PyTorch for image recognition and object detection</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Natural Language Processing</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">Creating intelligent chatbots and text analysis systems using NLTK, spaCy, and transformer models</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Data Analysis & Visualization</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">Extracting insights from complex datasets using Pandas, NumPy, and creating interactive dashboards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem; background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem;">Core Technologies</h3>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">NLTK</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem; font-size: 1.25rem;">Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Python</span>
+                            <span style="color: var(--text-muted);">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>C++</span>
+                            <span style="color: var(--text-muted);">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>JavaScript</span>
+                            <span style="color: var(--text-muted);">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>SQL</span>
+                            <span style="color: var(--text-muted);">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Java</span>
+                            <span style="color: var(--text-muted);">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem; font-size: 1.25rem;">AI/ML & Data Science</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>TensorFlow</span>
+                            <span style="color: var(--text-muted);">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>PyTorch</span>
+                            <span style="color: var(--text-muted);">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Scikit-learn</span>
+                            <span style="color: var(--text-muted);">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Pandas & NumPy</span>
+                            <span style="color: var(--text-muted);">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>OpenCV</span>
+                            <span style="color: var(--text-muted);">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>NLP (NLTK, spaCy)</span>
+                            <span style="color: var(--text-muted);">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem; font-size: 1.25rem;">Web & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>React.js</span>
+                            <span style="color: var(--text-muted);">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Flask/FastAPI</span>
+                            <span style="color: var(--text-muted);">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Git & GitHub</span>
+                            <span style="color: var(--text-muted);">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Docker</span>
+                            <span style="color: var(--text-muted);">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>VS Code</span>
+                            <span style="color: var(--text-muted);">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">AI/ML solutions that make a difference</p>
+            
+            <div class="grid grid-2">
+                <!-- Project 1 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Smart Disease Prediction System</h3>
+                        <div class="project-icon">🧠</div>
+                    </div>
+                    <p class="project-description">Machine learning model to predict potential diseases based on symptoms using ensemble learning techniques.</p>
+                    <div class="project-problem">
+                        <strong style="color: var(--accent-purple);">Problem:</strong> Traditional diagnostic systems lack accessibility and speed. Built an ML system to provide instant preliminary health assessments.
+                    </div>
+                    <div>
+                        <p style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Technologies:</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Random Forest</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <strong style="color: var(--accent-green);">Result:</strong> 94.2% accuracy on test data, reducing diagnostic time by 80%
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-secondary">💻 Code</a>
+                        <a href="#" class="btn btn-primary">🔗 Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">AI-Powered Image Classifier</h3>
+                        <div class="project-icon">📸</div>
+                    </div>
+                    <p class="project-description">Deep learning CNN model for multi-class image classification with transfer learning.</p>
+                    <div class="project-problem">
+                        <strong style="color: var(--accent-purple);">Problem:</strong> Automated classification of objects in images for inventory management and quality control systems.
+                    </div>
+                    <div>
+                        <p style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Technologies:</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">ResNet50</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <strong style="color: var(--accent-green);">Result:</strong> 96.7% validation accuracy, deployed as web app with real-time inference
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-secondary">💻 Code</a>
+                        <a href="#" class="btn btn-primary">🔗 Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Intelligent Chatbot with NLP</h3>
+                        <div class="project-icon">💬</div>
+                    </div>
+                    <p class="project-description">Context-aware conversational AI chatbot using natural language processing and intent recognition.</p>
+                    <div class="project-problem">
+                        <strong style="color: var(--accent-purple);">Problem:</strong> Customer support automation to handle common queries and provide 24/7 assistance.
+                    </div>
+                    <div>
+                        <p style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Technologies:</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">spaCy</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">TF-IDF</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <strong style="color: var(--accent-green);">Result:</strong> 89% intent recognition accuracy, handles 500+ queries daily
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-secondary">💻 Code</a>
+                        <a href="#" class="btn btn-primary">🔗 Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="card project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Stock Price Prediction Dashboard</h3>
+                        <div class="project-icon">📊</div>
+                    </div>
+                    <p class="project-description">Time series forecasting application using LSTM networks to predict stock market trends.</p>
+                    <div class="project-problem">
+                        <strong style="color: var(--accent-purple);">Problem:</strong> Provide investors with data-driven insights for better decision-making in volatile markets.
+                    </div>
+                    <div>
+                        <p style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">Technologies:</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Dash</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <strong style="color: var(--accent-green);">Result:</strong> 92.3% directional accuracy, interactive visualization dashboard
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-secondary">💻 Code</a>
+                        <a href="#" class="btn btn-primary">🔗 Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="card">
+                <div class="exp-header">
+                    <div class="exp-icon">💼</div>
+                    <div style="flex: 1;">
+                        <div class="exp-role">AI/ML Development Intern</div>
+                        <div class="exp-company">Tech Innovations Pvt. Ltd.</div>
+                        <div class="exp-meta">
+                            <span>📅 June 2024 - August 2024</span>
+                            <span>📍 Remote</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exp-responsibilities">
+                    <h4>Key Responsibilities & Achievements:</h4>
+                    <ul>
+                        <li>Preprocessed and cleaned large datasets (500K+ records) for training machine learning models</li>
+                        <li>Developed and trained classification models achieving 91% accuracy on validation data</li>
+                        <li>Implemented feature engineering techniques improving model performance by 12%</li>
+                        <li>Collaborated with senior data scientists on deployment pipeline using Docker and Flask</li>
+                        <li>Created visualization dashboards using Matplotlib and Seaborn for model performance analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="card">
+                <div class="exp-header">
+                    <div class="exp-icon" style="background: linear-gradient(to bottom right, var(--accent-purple), #ec4899);">🎓</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem;">
+                            <div>
+                                <div class="exp-role">Bachelor of Technology (B.Tech)</div>
+                                <div style="font-size: 1.25rem; color: var(--accent-cyan); margin-bottom: 0.25rem;">Computer Science & Engineering</div>
+                                <div style="font-size: 1.125rem; color: var(--accent-purple); font-weight: 600;">Specialization: Artificial Intelligence & Machine Learning</div>
+                            </div>
+                            <span style="padding: 0.25rem 1rem; background: rgba(16, 185, 129, 0.2); border: 1px solid var(--accent-green); border-radius: 9999px; color: var(--accent-green); font-size: 0.875rem; font-weight: 600;">
+                                Pursuing
+                            </span>
+                        </div>
+                        <div style="font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">Your University Name</div>
+                        <div class="exp-meta">
+                            <span>📅 2022 - 2026</span>
+                            <span>🎯 CGPA: 8.5/10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="grid grid-2">
+                <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: linear-gradient(to bottom right, var(--accent-cyan), var(--accent-blue)); padding: 0.5rem; border-radius: 0.5rem; font-size: 1.5rem;">🏆</div>
+                    <div>
+                        <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem;">Machine Learning Specialization</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.875rem; margin-bottom: 0.25rem;">Stanford University (Coursera)</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Issued: September 2024</p>
+                    </div>
+                </div>
+
+                <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: linear-gradient(to bottom right, var(--accent-cyan), var(--accent-blue)); padding: 0.5rem; border-radius: 0.5rem; font-size: 1.5rem;">🏆</div>
+                    <div>
+                        <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem;">Deep Learning Specialization</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.875rem; margin-bottom: 0.25rem;">DeepLearning.AI</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Issued: July 2024</p>
+                    </div>
+                </div>
+
+                <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: linear-gradient(to bottom right, var(--accent-cyan), var(--accent-blue)); padding: 0.5rem; border-radius: 0.5rem; font-size: 1.5rem;">🏆</div>
+                    <div>
+                        <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem;">Python for Data Science and AI</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.875rem; margin-bottom: 0.25rem;">IBM (Coursera)</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Issued: March 2024</p>
+                    </div>
+                </div>
+
+                <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="background: linear-gradient(to bottom right, var(--accent-cyan), var(--accent-blue)); padding: 0.5rem; border-radius: 0.5rem; font-size: 1.5rem;">🏆</div>
+                    <div>
+                        <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem;">TensorFlow Developer Certificate</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.875rem; margin-bottom: 0.25rem;">Google</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Issued: October 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a question or want to work together? Let's connect!</p>
+            
+            <div class="contact-grid">
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Contact Information</h3>
+                    <div class="contact-info">
+                        <a href="mailto:your.email@example.com">
+                            <span>✉️</span>
+                            <span>your.email@example.com</span>
+                        </a>
+                        <a href="https://github.com" target="_blank">
+                            <span>💻</span>
+                            <span>github.com/yourusername</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank">
+                            <span>💼</span>
+                            <span>linkedin.com/in/yourprofile</span>
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+                        <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary);">
+                            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. 
+                            Whether it's a collaboration, internship, or just a tech conversation, feel free to reach out!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">📨 Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 AI Portfolio. Built with HTML & CSS</p>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Designed for AI/ML enthusiasts | Empowering the future with intelligent systems</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
