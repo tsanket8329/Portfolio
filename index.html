@@ -652,58 +652,119 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-avatar">
-                <div style="
-  width:180px;
-  height:180px;
-  margin:0 auto 20px;
-  border-radius:50%;
-  padding:4px;
-  background:linear-gradient(135deg,#00d4ff,#6a5cff);
+    <section style="
+  min-height:100vh;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:white;
+  padding:40px 20px;
 ">
 
+  <!-- Avatar -->
   <div style="
-    width:100%;
-    height:100%;
+    width:190px;
+    height:190px;
     border-radius:50%;
-    overflow:hidden;
-    background:#111;
+    padding:5px;
+    background:linear-gradient(135deg,#00d4ff,#6a5cff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:30px;   /* ⭐ spacing fix */
+    box-shadow:0 0 25px rgba(0,212,255,0.4);
   ">
 
-    <img src='./profile.jpeg' alt='Sanket Tayde'
-      style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-      "
-    >
-
+    <div style="
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      overflow:hidden;
+      background:#111;
+    ">
+      <img src="./profile.jpeg" alt="Sanket Tayde"
+        style="
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          display:block;
+        ">
+    </div>
   </div>
-</div>
 
-            </div>
-            <h1>Sanket Tayde</h1>
-            <p class="hero-subtitle">AI & ML Enthusiast | Building Intelligent Systems with Data and Code</p>
-            <p class="hero-description">Passionate about creating innovative AI solutions that solve real-world problems</p>
-            
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">📄 Resume / CV</a>
-                <a href="https://github.com" target="_blank" class="btn btn-secondary">💻 GitHub</a>
-                <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">💼 LinkedIn</a>
-                <a href="#contact" class="btn btn-secondary">✉️ Contact</a>
-            </div>
-            
-            <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-                ⌄
-            </div>
-        </div>
-    </section>
+  <!-- Name -->
+  <h1 style="
+    font-size:48px;
+    margin:0 0 12px;
+    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:700;
+  ">
+    Sanket Tayde
+  </h1>
+
+  <!-- Subtitle -->
+  <p style="
+    font-size:20px;
+    color:#cbd5e1;
+    max-width:700px;
+    margin-bottom:12px;
+  ">
+    AI & ML Enthusiast | Building Intelligent Systems with Data and Code
+  </p>
+
+  <!-- Description -->
+  <p style="
+    font-size:16px;
+    color:#94a3b8;
+    max-width:600px;
+    margin-bottom:30px;
+  ">
+    Passionate about creating innovative AI solutions that solve real-world problems.
+  </p>
+
+  <!-- Buttons -->
+  <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+    <a href="#" style="
+      padding:12px 22px;
+      border-radius:10px;
+      background:linear-gradient(90deg,#3b82f6,#06b6d4);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+    ">Resume / CV</a>
+
+    <a href="https://github.com/tsanket8329" style="
+      padding:12px 22px;
+      border-radius:10px;
+      border:1px solid #334155;
+      color:#e2e8f0;
+      text-decoration:none;
+    ">GitHub</a>
+
+    <a href="https://www.linkedin.com/in/sanket-tayde-702051248/" style="
+      padding:12px 22px;
+      border-radius:10px;
+      border:1px solid #334155;
+      color:#e2e8f0;
+      text-decoration:none;
+    ">LinkedIn</a>
+
+    <a href="#contact" style="
+      padding:12px 22px;
+      border-radius:10px;
+      border:1px solid #334155;
+      color:#e2e8f0;
+      text-decoration:none;
+    ">Contact</a>
+  </div>
+
+</section>
+
 
     <!-- About Section -->
     <section id="about">
