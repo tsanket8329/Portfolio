@@ -43,17 +43,69 @@ export const Experience = () => {
           >
             <div className="flex flex-col md:flex-row justify-between md:items-center mb-4">
               <div>
-                <h3 className="text-xl font-bold text-white">AI/ML Development Intern</h3>
-                <p className="text-[#38bdf8] font-semibold">Tech Innovations Pvt. Ltd. (Remote)</p>
+                <h3 className="text-xl font-bold text-white">Machine Learning Intern</h3>
+                <p className="text-[#38bdf8] font-semibold">Skillcraft Technology</p>
               </div>
-              <p className="text-gray-400 font-medium mt-2 md:mt-0">June 2025 – August 2025</p>
+              <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                <p className="text-gray-400 font-medium">Jan 2026 – Feb 2026</p>
+                <a
+                  href="https://github.com/tsanket8329/Machine-Learning-Internship-Task-Skill-Craft-Technology"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-xs text-[#00d4ff] hover:underline"
+                >
+                  🔗 GitHub Repository
+                </a>
+              </div>
             </div>
             <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
-              <li>Preprocessed and cleaned large datasets (500K+ records) for training machine learning models.</li>
-              <li>Developed and trained classification models achieving 91% accuracy on validation data.</li>
-              <li>Implemented feature engineering techniques improving model performance by 12%.</li>
-              <li>Collaborated with senior data scientists on deployment pipelines using Docker and Flask.</li>
-              <li>Created interactive visualization dashboards using Matplotlib and Seaborn for model performance analysis.</li>
+              <li>Assisted in data preprocessing, exploratory data analysis (EDA), feature engineering, and model building across multiple machine learning projects.</li>
+              <li>Implemented and evaluated regression, clustering, classification, and CNN-based models, including real-time hand gesture recognition, using appropriate performance metrics.</li>
+              <li>Enhanced skills in Python and ML libraries, gaining hands-on experience with real-world datasets and end-to-end ML workflows.</li>
+            </ul>
+          </motion.div>
+
+          {/* Experience 2 */}
+          <motion.div
+            variants={slideInFromLeft(0.7)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-8 hover:border-[#7042f8] transition-all duration-300 w-full"
+          >
+            <div className="flex flex-col md:flex-row justify-between md:items-center mb-4">
+              <div>
+                <h3 className="text-xl font-bold text-white">Machine Learning Intern</h3>
+                <p className="text-[#38bdf8] font-semibold">Saiket Systems</p>
+              </div>
+              <p className="text-gray-400 font-medium mt-2 md:mt-0">Sep 2025 – Oct 2025</p>
+            </div>
+            <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
+              <li>Integrated data preprocessing, feature selection, model training, and evaluation for the Customer Churn Prediction project.</li>
+              <li>Contributed to developing and optimizing predictive ML models through analytical discussions, applying algorithms, and evaluating performance using Accuracy, Precision, Recall, F1 Score, and ROC-AUC.</li>
+              <li>Strengthened problem-solving, model interpretability, and adaptability to real-world AI challenges.</li>
+            </ul>
+          </motion.div>
+
+          {/* Training */}
+          <motion.div
+            variants={slideInFromLeft(0.8)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-8 hover:border-[#7042f8] transition-all duration-300 w-full"
+          >
+            <div className="flex flex-col md:flex-row justify-between md:items-center mb-4">
+              <div>
+                <h3 className="text-xl font-bold text-white">C++ Programming: OOPS and DSA Summer Live Training</h3>
+                <p className="text-[#a78bfa] font-semibold">Lovely Professional University (LPU)</p>
+              </div>
+              <p className="text-gray-400 font-medium mt-2 md:mt-0">Jun 2025 – Jul 2025</p>
+            </div>
+            <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
+              <li>Gained hands-on experience with Data Structures and Algorithms in C++, applying STL concepts to efficiently manage and manipulate data.</li>
+              <li>Learned backend development in C++, including REST API handling, file persistence, JSON processing, and concurrency using mutexes.</li>
+              <li>Improved understanding of full-stack integration, API design, problem-solving, and version control using Git and GitHub.</li>
             </ul>
           </motion.div>
         </div>

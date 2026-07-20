@@ -36,7 +36,7 @@ export const Achievements = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
           
-          {/* Machine Learning Specialization */}
+          {/* Oracle Certification */}
           <motion.div
             variants={slideInFromLeft(0.6)}
             initial="hidden"
@@ -44,25 +44,20 @@ export const Achievements = () => {
             viewport={{ once: true }}
             className="relative group"
           >
-            <Link 
-              href="https://drive.google.com/file/d/1vqNrCGMtmSYDubiY3sB0sP7M1CuxP7SU/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="block h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#00d4ff] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] hover:-translate-y-1 cursor-pointer"
-            >
+            <div className="h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#00d4ff] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] hover:-translate-y-1">
               <div className="text-3xl mb-3">🏆</div>
-              <h3 className="text-white font-semibold text-[18px] mb-1">Machine Learning Specialization</h3>
-              <p className="text-[#00d4ff] text-sm font-medium mb-3">Stanford University (Coursera)</p>
+              <h3 className="text-white font-semibold text-[18px] mb-1">Oracle Data Platform Certified Foundations Associate</h3>
+              <p className="text-[#00d4ff] text-sm font-medium mb-3">Oracle</p>
               <p className="text-gray-400 text-[14px] leading-[1.7] mb-4">
-                Advanced training in supervised learning, neural networks, unsupervised learning, and best practices for building real-world ML algorithms.
+                Demonstrated foundational knowledge of Oracle Data Platform concepts, data management, and cloud architecture.
               </p>
               <div className="text-[12px] text-gray-500 font-medium tracking-wide border-t border-[#2A0E61] pt-3 mt-auto">
-                Issued: September 2025
+                Issued: April 2026
               </div>
-            </Link>
+            </div>
           </motion.div>
 
-          {/* Deep Learning & TensorFlow Certifications */}
+          {/* HackerRank Software Engineer Intern */}
           <motion.div
             variants={slideInFromLeft(0.7)}
             initial="hidden"
@@ -70,16 +65,15 @@ export const Achievements = () => {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#7042f8] transition-all duration-300 hover:shadow-[0_0_30px_rgba(112,66,248,0.15)] hover:-translate-y-1">
+            <div className="h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#00EA64] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,234,100,0.15)] hover:-translate-y-1">
               <div className="text-3xl mb-3">📜</div>
-              <h3 className="text-white font-semibold text-[18px] mb-2">Professional Certifications</h3>
-              <ul className="text-gray-400 text-[14px] leading-[1.7] mb-4 space-y-2 list-disc ml-4">
-                <li><strong className="text-white">Deep Learning Specialization</strong> - DeepLearning.AI (July 2025)</li>
-                <li><strong className="text-white">TensorFlow Developer Certificate</strong> - Google (October 2025)</li>
-                <li><strong className="text-white">Python for Data Science and AI</strong> - IBM / Coursera (March 2025)</li>
-              </ul>
+              <h3 className="text-white font-semibold text-[18px] mb-1">Software Engineer Intern Certification</h3>
+              <p className="text-[#00EA64] text-sm font-medium mb-3">HackerRank</p>
+              <p className="text-gray-400 text-[14px] leading-[1.7] mb-4">
+                Validated core competencies in Software Engineering, Data Structures, Problem Solving, and REST API design.
+              </p>
               <div className="text-[12px] text-gray-500 font-medium tracking-wide border-t border-[#2A0E61] pt-3 mt-auto">
-                Verified Skill Credentials
+                Issued: September 2025
               </div>
             </div>
           </motion.div>

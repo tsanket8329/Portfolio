@@ -205,25 +205,25 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "DDPM for Image Generation on MNIST",
+    title: "Denoising Diffusion Probabilistic Model (DDPM) for Image Generation on MNIST",
     description:
-      "Constructed a conditional Denoising Diffusion Probabilistic Model (DDPM) with 1,000 diffusion timesteps, trained on 60k MNIST images using TensorFlow. Reduced reconstruction loss by ~10% and achieved stable convergence.",
+      "Constructed a conditional DDPM with 1,000 diffusion timesteps, trained on 60k MNIST images using TensorFlow. Reduced reconstruction loss by ~10%, maintained a train-validation loss gap <0.001, and achieved stable convergence with early stopping (best validation MSE ~0.039).",
     image: "/projects/project-1.png",
     link: "https://github.com/tsanket8329/MNIST-IMAGE-DDPM",
   },
   {
-    title: "Sorting Visualizer Project",
+    title: "Sorting Visualizer",
     description:
-      "Engineered an interactive algorithm computation visualizer to execute step-by-step state outputs for 12+ sorting & graph algorithms. Containerized backend architecture using Docker.",
+      "Engineered a backend computation engine to execute and visualize 12+ sorting and graph algorithms with step-by-step state outputs. Automated delivery of educational metadata serving 30+ unique data points per request. Containerized using Docker & docker-compose.",
     image: "/projects/project-2.png",
     link: "https://github.com/tsanket8329/Sorting-Visualizer",
   },
   {
-    title: "Real-Time Process Monitoring System",
+    title: "Machine Learning Internship Tasks - Skillcraft Technology",
     description:
-      "Built a machine learning process monitoring system with predictive diagnostic insights, log analysis, and real-time operational state tracking.",
+      "Assisted in data preprocessing, EDA, feature engineering, and model building across multiple ML projects. Implemented regression, clustering, classification, and CNN-based models, including real-time hand gesture recognition.",
     image: "/projects/project-3.png",
-    link: "https://github.com/tsanket8329/Real_Time_Process_Monitoring",
+    link: "https://github.com/tsanket8329/Machine-Learning-Internship-Task-Skill-Craft-Technology",
   },
 ] as const;
 

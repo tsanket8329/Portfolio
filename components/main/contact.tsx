@@ -44,7 +44,7 @@ export const Contact = () => {
             I'm actively exploring AI, DSA, and backend system design. Open to discussing exciting projects, collaborations, and learning opportunities. Let's connect!
           </p>
 
-          <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-wrap gap-4">
             <a
               href="https://github.com/tsanket8329"
               target="_blank"
@@ -71,6 +71,14 @@ export const Contact = () => {
             >
               <span className="text-xl">📧</span>
               <span className="font-medium">tsanket8329@gmail.com</span>
+            </a>
+
+            <a
+              href="tel:+918830437215"
+              className="flex items-center gap-3 py-3 px-6 rounded-lg border border-[#2A0E61] hover:border-[#7042f8] bg-[#030014] text-white transition-all hover:-translate-y-1"
+            >
+              <span className="text-xl">📱</span>
+              <span className="font-medium">+91 8830437215</span>
             </a>
           </div>
         </motion.div>

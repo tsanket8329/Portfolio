@@ -35,20 +35,67 @@ export const Education = () => {
               <h3 className="text-white font-semibold text-[20px]">
                 Bachelor of Technology (B.Tech) in Computer Science & Engineering
               </h3>
-              <p className="text-[#a78bfa] font-medium text-[16px] mt-1">
-                Specialization: Artificial Intelligence & Machine Learning
-              </p>
               <p className="text-gray-400 text-[15px] mt-1">
                 Lovely Professional University, Punjab, India
               </p>
             </div>
             <div className="Welcome-box py-[6px] px-[14px] border border-[#7042f88b]">
               <span className="Welcome-text text-[13px] font-semibold">
-                CGPA: 7.01 / 10
+                CGPA: 7.2
               </span>
             </div>
           </div>
-          <p className="text-gray-400 text-[14px] mb-2">2023 – 2027 (Pursuing)</p>
+          <p className="text-gray-400 text-[14px] mb-2">Aug 2023 – Present</p>
+        </motion.div>
+
+        <motion.div
+          variants={slideInFromLeft(0.6)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 md:p-8 hover:border-[#7042f8] transition-all duration-300"
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+            <div>
+              <h3 className="text-white font-semibold text-[20px]">
+                Intermediate (12th Grade)
+              </h3>
+              <p className="text-gray-400 text-[15px] mt-1">
+                Rajrshi Shahu Jr. College, Buldhana, Maharashtra
+              </p>
+            </div>
+            <div className="Welcome-box py-[6px] px-[14px] border border-[#7042f88b]">
+              <span className="Welcome-text text-[13px] font-semibold">
+                Score: 88%
+              </span>
+            </div>
+          </div>
+          <p className="text-gray-400 text-[14px] mb-2">March 2023</p>
+        </motion.div>
+
+        <motion.div
+          variants={slideInFromLeft(0.7)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 md:p-8 hover:border-[#7042f8] transition-all duration-300"
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+            <div>
+              <h3 className="text-white font-semibold text-[20px]">
+                Matriculation (10th Grade)
+              </h3>
+              <p className="text-gray-400 text-[15px] mt-1">
+                Sahakar Vidya Mandir, Buldhana, Maharashtra
+              </p>
+            </div>
+            <div className="Welcome-box py-[6px] px-[14px] border border-[#7042f88b]">
+              <span className="Welcome-text text-[13px] font-semibold">
+                Score: 87.2%
+              </span>
+            </div>
+          </div>
+          <p className="text-gray-400 text-[14px] mb-2">August 2020</p>
         </motion.div>
       </div>
     </section>
