@@ -54,7 +54,7 @@ export const HeroContent = () => {
           className="flex flex-row gap-4 flex-wrap"
         >
           <a
-            href="https://drive.google.com/file/d/1qzD37wHVCul8I0tr2Ja6zjsjyxEhCK0m/view?usp=sharing"
+            href="/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="py-3 px-6 button-primary text-center text-white cursor-pointer rounded-lg font-semibold"
