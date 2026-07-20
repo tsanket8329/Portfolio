@@ -134,7 +134,7 @@ export const Metrics = () => {
             viewport={{ once: true }}
           >
             <Link
-              href="https://www.geeksforgeeks.org/profile/tsanke84hl"
+              href="https://www.geeksforgeeks.org/profile/tsanke84hl?tab=activity"
               target="_blank"
               rel="noreferrer noopener"
               className="block h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#2f8d46] transition-all duration-300 flex flex-col gap-4 cursor-pointer hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(47,141,70,0.15)]"
