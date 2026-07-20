@@ -63,9 +63,90 @@ export const Achievements = () => {
             </Link>
           </motion.div>
 
-          {/* HackerRank 5-Star Badge */}
+          {/* Skillcraft ML Certificate */}
+          <motion.div
+            variants={slideInFromLeft(0.65)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <Link
+              href="https://drive.google.com/file/d/1HlxUudS3h90bn0nNj0BF2Obd8sWIcIVD/view"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="block h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#38bdf8] transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] hover:-translate-y-1 cursor-pointer"
+            >
+              <div className="text-3xl mb-3">🤖</div>
+              <h3 className="text-white font-semibold text-[18px] mb-1">Machine Learning Internship Certificate</h3>
+              <p className="text-[#38bdf8] text-sm font-medium mb-3">Skillcraft Technology</p>
+              <p className="text-gray-400 text-[14px] leading-[1.7] mb-4">
+                Completed hands-on machine learning projects involving regression, clustering, CNNs, and real-time gesture recognition.
+              </p>
+              <div className="text-[12px] text-[#38bdf8] font-medium tracking-wide border-t border-[#2A0E61] pt-3 mt-auto flex justify-between items-center">
+                <span>Jan 2026 – Feb 2026</span>
+                <span>View Certificate 🔗</span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Saiket Systems ML Certificate */}
           <motion.div
             variants={slideInFromLeft(0.7)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <Link
+              href="https://drive.google.com/file/d/14Y4ZAFucYmYllX0l1xRaL9RJd_MWPNQe/view"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="block h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#a78bfa] transition-all duration-300 hover:shadow-[0_0_30px_rgba(167,139,250,0.15)] hover:-translate-y-1 cursor-pointer"
+            >
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="text-white font-semibold text-[18px] mb-1">Machine Learning Internship Certificate</h3>
+              <p className="text-[#a78bfa] text-sm font-medium mb-3">Saiket Systems</p>
+              <p className="text-gray-400 text-[14px] leading-[1.7] mb-4">
+                Developed and optimized predictive ML models for Customer Churn Prediction (Accuracy, F1, ROC-AUC).
+              </p>
+              <div className="text-[12px] text-[#a78bfa] font-medium tracking-wide border-t border-[#2A0E61] pt-3 mt-auto flex justify-between items-center">
+                <span>Sep 2025 – Oct 2025</span>
+                <span>View Certificate 🔗</span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* LPU C++ Training Certificate */}
+          <motion.div
+            variants={slideInFromLeft(0.75)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <Link
+              href="https://drive.google.com/file/d/18hoozRAHETnJWwj0uys6vL0KeQNDXfWv/view"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="block h-full bg-[rgba(3,0,20,0.6)] border border-[#2A0E61] rounded-xl p-6 hover:border-[#7042f8] transition-all duration-300 hover:shadow-[0_0_30px_rgba(112,66,248,0.15)] hover:-translate-y-1 cursor-pointer"
+            >
+              <div className="text-3xl mb-3">💻</div>
+              <h3 className="text-white font-semibold text-[18px] mb-1">C++ OOPS &amp; DSA Training Certificate</h3>
+              <p className="text-[#7042f8] text-sm font-medium mb-3">Lovely Professional University (LPU)</p>
+              <p className="text-gray-400 text-[14px] leading-[1.7] mb-4">
+                Advanced training in C++ STL, Data Structures, Algorithms, Crow REST APIs, JSON, and mutex concurrency.
+              </p>
+              <div className="text-[12px] text-[#7042f8] font-medium tracking-wide border-t border-[#2A0E61] pt-3 mt-auto flex justify-between items-center">
+                <span>Jun 2025 – Jul 2025</span>
+                <span>View Certificate 🔗</span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* HackerRank 5-Star Badge */}
+          <motion.div
+            variants={slideInFromLeft(0.8)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -92,7 +173,7 @@ export const Achievements = () => {
 
           {/* HackerRank Software Engineer Intern */}
           <motion.div
-            variants={slideInFromLeft(0.8)}
+            variants={slideInFromLeft(0.85)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
