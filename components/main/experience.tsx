@@ -48,14 +48,24 @@ export const Experience = () => {
               </div>
               <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
                 <p className="text-gray-400 font-medium">Jan 2026 – Feb 2026</p>
-                <a
-                  href="https://github.com/tsanket8329/Machine-Learning-Internship-Task-Skill-Craft-Technology"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-xs text-[#00d4ff] hover:underline"
-                >
-                  🔗 GitHub Repository
-                </a>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://drive.google.com/file/d/1HlxUudS3h90bn0nNj0BF2Obd8sWIcIVD/view"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-xs text-[#a78bfa] hover:underline flex items-center gap-1 font-medium"
+                  >
+                    📜 Certificate
+                  </a>
+                  <a
+                    href="https://github.com/tsanket8329/Machine-Learning-Internship-Task-Skill-Craft-Technology"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-xs text-[#00d4ff] hover:underline flex items-center gap-1 font-medium"
+                  >
+                    🔗 GitHub Repo
+                  </a>
+                </div>
               </div>
             </div>
             <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
@@ -78,7 +88,17 @@ export const Experience = () => {
                 <h3 className="text-xl font-bold text-white">Machine Learning Intern</h3>
                 <p className="text-[#38bdf8] font-semibold">Saiket Systems</p>
               </div>
-              <p className="text-gray-400 font-medium mt-2 md:mt-0">Sep 2025 – Oct 2025</p>
+              <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                <p className="text-gray-400 font-medium">Sep 2025 – Oct 2025</p>
+                <a
+                  href="https://drive.google.com/file/d/14Y4ZAFucYmYllX0l1xRaL9RJd_MWPNQe/view"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-xs text-[#a78bfa] hover:underline flex items-center gap-1 font-medium"
+                >
+                  📜 Certificate
+                </a>
+              </div>
             </div>
             <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
               <li>Integrated data preprocessing, feature selection, model training, and evaluation for the Customer Churn Prediction project.</li>
@@ -100,7 +120,17 @@ export const Experience = () => {
                 <h3 className="text-xl font-bold text-white">C++ Programming: OOPS and DSA Summer Live Training</h3>
                 <p className="text-[#a78bfa] font-semibold">Lovely Professional University (LPU)</p>
               </div>
-              <p className="text-gray-400 font-medium mt-2 md:mt-0">Jun 2025 – Jul 2025</p>
+              <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                <p className="text-gray-400 font-medium">Jun 2025 – Jul 2025</p>
+                <a
+                  href="https://drive.google.com/file/d/18hoozRAHETnJWwj0uys6vL0KeQNDXfWv/view"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-xs text-[#a78bfa] hover:underline flex items-center gap-1 font-medium"
+                >
+                  📜 Certificate
+                </a>
+              </div>
             </div>
             <ul className="list-disc ml-5 text-gray-400 flex flex-col gap-2">
               <li>Gained hands-on experience with Data Structures and Algorithms in C++, applying STL concepts to efficiently manage and manipulate data.</li>
