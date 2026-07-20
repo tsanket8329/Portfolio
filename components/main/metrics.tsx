@@ -112,17 +112,16 @@ export const Metrics = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                  40+
+                  300+
                 </h1>
                 <p className="text-gray-400 text-sm font-medium">Problems Solved</p>
               </div>
               <div className="flex flex-col gap-1 text-xs text-gray-300 mt-2">
-                <div className="flex justify-between"><span className="text-[#ffc01e]">Medium</span><span className="text-white font-semibold">21</span></div>
-                <div className="flex justify-between"><span className="text-[#ff375f]">Hard</span><span className="text-white font-semibold">10</span></div>
-                <div className="flex justify-between"><span className="text-[#00b8a3]">Easy</span><span className="text-white font-semibold">9</span></div>
+                <div className="flex justify-between"><span className="text-[#ffc01e]">Advanced DSA</span><span className="text-white font-semibold">Active</span></div>
+                <div className="flex justify-between"><span className="text-[#00b8a3]">Problem Solving</span><span className="text-white font-semibold">Consistent</span></div>
               </div>
               <div className="mt-auto pt-3 border-t border-[#2A0E61] text-xs text-[#ffa116] font-medium">
-                77.5% Medium &amp; Hard Focus
+                High Medium &amp; Hard Focus
               </div>
             </Link>
           </motion.div>
@@ -146,17 +145,16 @@ export const Metrics = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
-                  82
+                  200+
                 </h1>
-                <p className="text-gray-400 text-sm font-medium">Coding Score</p>
+                <p className="text-gray-400 text-sm font-medium">Problems Solved</p>
               </div>
               <div className="flex flex-col gap-1 text-xs text-gray-300 mt-2">
-                <div className="flex justify-between"><span className="text-gray-400">Solved</span><span className="text-white font-semibold">18</span></div>
-                <div className="flex justify-between"><span className="text-gray-400">Max Streak</span><span className="text-white font-semibold">16 Days</span></div>
-                <div className="flex justify-between"><span className="text-gray-400">POTDs Solved</span><span className="text-white font-semibold">18</span></div>
+                <div className="flex justify-between"><span className="text-gray-400">Coding Score</span><span className="text-white font-semibold">82+</span></div>
+                <div className="flex justify-between"><span className="text-gray-400">POTDs</span><span className="text-white font-semibold">Active Streak</span></div>
               </div>
               <div className="mt-auto pt-3 border-t border-[#2A0E61] text-xs text-[#2f8d46] font-medium">
-                Active Problem Solver
+                Core Computer Science &amp; DSA
               </div>
             </Link>
           </motion.div>
